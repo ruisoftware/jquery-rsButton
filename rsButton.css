@@ -1,0 +1,224 @@
+.btn,
+.btnflat {
+  vertical-align: top;
+  font-size: 16px;
+  color: hsl(55,50%,50%);
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 1px;
+  border: 2px solid hsl(0,0%,18%); 
+  border-bottom-width: 1px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: hsl(0,0%,24%);
+  -webkit-box-shadow: 0 1px 1px black, 0 4px 7px -3px hsla(0, 0%, 0%, .7);
+  -moz-box-shadow: 0 1px 1px black, 0 4px 7px -3px hsla(0, 0%, 0%, .7);
+  box-shadow: 0 1px 1px black, 0 4px 7px -3px hsla(0, 0%, 0%, .7);
+  outline: none;
+  text-shadow: 0 -1px 1px hsl(0, 0%, 5%);
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747',endColorstr='#2b2b2b',GradientType=0);
+}
+.w .btn,
+.w .btnflat {
+  border-color: hsla(0,0%,45%,.9);
+  background-color: hsl(0,0%,90%);
+  color: hsl(60, 100%, 28%);
+  text-shadow: 0 -1px 1px white;
+}
+.btnflat {
+  color: #7e7a43;
+}
+
+.btn.frm2 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747',endColorstr='#333',GradientType=0);
+  -webkit-box-shadow: 0 1px 0px #222;
+  -moz-box-shadow: 0 1px 0px #222;
+  box-shadow: 0 1px 0px #222;
+}
+.w .btn.frm2 {
+  border-color: hsla(0,0%,45%,.9);
+  -webkit-box-shadow: 0 1px 1px hsla(0,0%,45%,.9);
+  -moz-box-shadow: 0 1px 1px hsla(0,0%,45%,.9);
+  box-shadow: 0 1px 1px hsla(0,0%,45%,.9);
+}
+
+.btn.frm3 {
+  padding: 7px 14px 5px;
+  margin-bottom: 0;
+  border-bottom: 2px solid hsl(0,0%,22%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2b2b2b',endColorstr='#474747',GradientType=0);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.w .btn.frm3 {
+  border-bottom-color: hsl(0,0%,65%);
+}
+
+.w .btnflat.frm2,
+.w .btnflat.frm3 {
+  border-color: hsla(0,0%,45%,.8);
+  background: hsl(0,0%,86%);
+}
+
+.btnflat.frm2,
+.btnflat.frm3 {
+  border: 2px solid hsl(0,0%,18%);
+  margin-bottom: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.btnflat.frm3 {
+  padding: 6px 14px 6px;
+  border-bottom-width:1px;
+  margin-bottom: 1px;
+  background: hsl(0,0%,23%);
+} 
+
+.btn:before, .btn:after,
+.btnflat:before, .btnflat:after {
+  content: '';
+  position: absolute;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.btn:before,
+.btnflat:before {
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -4px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: hsl(0, 0%, 20%);
+  background: -webkit-linear-gradient(top, hsl(0, 0%, 18%), hsl(0, 0%, 32%));
+  background: -moz-linear-gradient(top, hsl(0, 0%, 18%), hsl(0, 0%, 32%));
+  background: -o-linear-gradient(top, hsl(0, 0%, 18%), hsl(0, 0%, 32%));
+  background: -ms-linear-gradient(top, hsl(0, 0%, 18%), hsl(0, 0%, 32%));
+  background: linear-gradient(top, hsl(0, 0%, 18%), hsl(0, 0%, 32%));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e2e2e',endColorstr='#525252',GradientType=0);
+  z-index: -1;
+}
+.btnflat.frm1:before {
+  bottom: -5px;
+}
+.btnflat.frm2:before {
+  bottom: -5px;
+}
+
+.w .btn:before,
+.w .btnflat:before {
+  background: white;
+  background: -webkit-linear-gradient(top, hsl(0, 0%, 70%), hsl(0, 100%, 100%));
+  background: -moz-linear-gradient(top, hsl(0, 0%, 70%), hsl(0, 100%, 100%));
+  background: -o-linear-gradient(top, hsl(0, 0%, 70%), hsl(0, 100%, 100%));
+  background: -ms-linear-gradient(top, hsl(0, 0%, 70%), hsl(0, 100%, 100%));
+  background: linear-gradient(top, hsl(0, 0%, 70%), hsl(0, 100%, 100%));
+}
+
+
+.btn:after,
+.btnflat:after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.btn:after {
+  border: 2px solid hsla(0,100%,100%,.03);
+  border-top-color: hsla(0,100%,100%,.2);
+  border-bottom: none;
+  background: -moz-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 50%,hsla(0,0%,16%,.7) 100%);
+  background: -webkit-linear-gradient(top, hsla(0,0%,28%,.5) 0%, hsla(0,0%,30%,.5) 47%, hsla(0,0%,22%,.4) 53%, hsla(0,0%,16%,.8) 100%);
+  background: -o-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 50%,hsla(0,0%,16%,.7) 100%);
+  background: -ms-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 50%,hsla(0,0%,16%,.7) 100%);
+  background: linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 50%,hsla(0,0%,16%,.7) 100%);
+} 
+
+.btn.frm2:after {
+  border: 2px solid hsla(0,100%,100%,.05);
+  border-top-color: hsla(0,100%,100%,.18);
+  border-bottom: none;
+  background: -moz-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 25%,hsla(0,0%,20%,.8) 100%);
+  background: -webkit-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 25%,hsla(0,0%,20%,.8) 100%);
+  background: -o-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 25%,hsla(0,0%,20%,.8) 100%);
+  background: -ms-linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 25%,hsla(0,0%,20%,.8) 100%);
+  background: linear-gradient(top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 25%,hsla(0,0%,20%,.8) 100%);
+}
+
+.btn.frm3:after {
+  border: 2px solid hsl(0,0%,22%);
+  border-top-color: hsl(0,0%,23%);
+  border-bottom: none;
+  background: -moz-linear-gradient(top, hsla(0,0%,16%,.7) 0%,hsla(0,0%,24%,.3) 50%,hsla(0,0%,28%,.6) 100%);
+  background: -webkit-linear-gradient(top, hsla(0,0%,16%,.7) 0%,hsla(0,0%,24%,.3) 50%,hsla(0,0%,28%,.6) 100%);
+  background: -o-linear-gradient(top, hsla(0,0%,16%,.7) 0%,hsla(0,0%,24%,.3) 50%,hsla(0,0%,28%,.6) 100%);
+  background: -ms-linear-gradient(top, hsla(0,0%,16%,.7) 0%,hsla(0,0%,24%,.3) 50%,hsla(0,0%,28%,.6) 100%);
+  background: linear-gradient(top, hsla(0,0%,16%,.7) 0%,hsla(0,0%,24%,.3) 50%,hsla(0,0%,28%,.6) 100%);
+}
+
+.w .btn:after {
+  border-color: hsla(0, 100%, 100%, .2);
+  border-top-color: white;
+  background: -moz-linear-gradient(top,hsla(0,0%,80%,.5) 0%,hsla(0,0%,80%,.5) 47%,hsla(0,0%,60%,.4) 53%,hsla(0,0%,60%,.8) 100%);
+  background: -webkit-linear-gradient(top,hsla(0,0%,80%,.5) 0%,hsla(0,0%,80%,.5) 47%,hsla(0,0%,60%,.4) 53%,hsla(0,0%,60%,.8) 100%);
+  background: -o-linear-gradient(top,hsla(0,0%,80%,.5) 0%,hsla(0,0%,80%,.5) 47%,hsla(0,0%,60%,.4) 53%,hsla(0,0%,60%,.8) 100%);
+  background: -ms-linear-gradient(top,hsla(0,0%,80%,.5) 0%,hsla(0,0%,80%,.5) 47%,hsla(0,0%,60%,.4) 53%,hsla(0,0%,60%,.8) 100%);
+  background: linear-gradient(top,hsla(0,0%,80%,.5) 0%,hsla(0,0%,80%,.5) 47%,hsla(0,0%,60%,.4) 53%,hsla(0,0%,60%,.8) 100%);
+}
+
+.w .btn.frm2:after {
+  border-color: hsla(0, 100%, 100%, .2);
+  border-top-color: hsl(0, 0%, 90%);
+  background: -moz-linear-gradient(top, hsla(0, 0%, 80%, 0.95) 0%,hsla(0, 0%, 60%, 0.5) 40%,hsl(0, 0%, 85%) 100%);
+  background: -webkit-linear-gradient(top, hsla(0, 0%, 80%, 0.95) 0%,hsla(0, 0%, 60%, 0.5) 40%,hsl(0, 0%, 85%) 100%);
+  background: -o-linear-gradient(top, hsla(0, 0%, 80%, 0.95) 0%,hsla(0, 0%, 60%, 0.5) 40%,hsl(0, 0%, 85%) 100%);
+  background: -ms-linear-gradient(top, hsla(0, 0%, 80%, 0.95) 0%,hsla(0, 0%, 60%, 0.5) 40%,hsl(0, 0%, 85%) 100%);
+  background: linear-gradient(top, hsla(0, 0%, 80%, 0.95) 0%,hsla(0, 0%, 60%, 0.5) 40%,hsl(0, 0%, 85%) 100%);
+}
+
+.w .btn.frm3:after {
+  border-color: hsla(0, 100%, 100%, .25);
+  border-top-color: hsl(0, 0%, 85%);
+  background: -moz-linear-gradient(top, hsla(0, 0%, 50%, 0.6), hsla(0, 0%, 80%, 0.25));
+  background: -webkit-linear-gradient(top, hsla(0, 0%, 50%, 0.6), hsla(0, 0%, 80%, 0.25));
+  background: -o-linear-gradient(top, hsla(0, 0%, 50%, 0.6), hsla(0, 0%, 80%, 0.25));
+  background: -ms-linear-gradient(top, hsla(0, 0%, 50%, 0.6), hsla(0, 0%, 80%, 0.25));
+  background: linear-gradient(top, hsla(0, 0%, 50%, 0.6), hsla(0, 0%, 80%, 0.25));
+}
+
+.btnflat:after {
+  border: 2px solid hsla(0, 100%, 100%, .08);
+  border-top-color: hsla(0, 100%, 100%, .15);
+  border-bottom: none;
+} 
+.btnflat.frm2:after {
+  border: 2px solid hsla(0, 100%, 100%, .055);
+  border-top-color: hsla(0, 100%, 100%, .125);
+  border-bottom: none;
+}
+.btnflat.frm3:after {
+  border: 2px solid hsla(0, 100%, 100%, .03);
+  border-top-color: hsla(0, 100%, 100%, .06);
+  border-bottom: none;
+}
+
+.w .btnflat:after {
+  border-color: hsl(0, 100%, 100%);
+}
+.w .btnflat.frm2:after {
+  border-color: hsla(0, 100%, 100%, .7);
+}
+.w .btnflat.frm3:after {
+  border-color: hsla(0, 100%, 100%, .4);
+}

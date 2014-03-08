@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rsButton plugin</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.rsButton.js"></script>
+    <link href="rsButton.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+           $("button, .btnflat").rsButton();
+
+           $("#s").click(function() { $("button").rsButton('destroy'); });
+        });
+    </script>
+  </head>
+  <body>
+    
+    <button>button</button>
+    <input id="s" type="button" value="input button" />
+    <input type="submit" value="input submit" />
+    <span class="btnflat">span</span>
+  </body>
+</html>
