@@ -1,0 +1,283 @@
+// colors
+// ===============
+// These funny color names came from http://chir.ag/projects/name-that-color/
+@hokeyPokey: #bab026;
+
+
+@layout: 'dark';  // layout type: 'dark' or 'light'
+@colorCaption: @hokeyPokey;
+
+
+// scalar values
+// ===============
+@refScale: 16px;  // Allowed units are: px, pt (for fixed layout) or em, rem, vw, vh, vmin, vmax (for elastic layout).
+                  // To try other sizes, you only need to change this line. All the rest will resize according to this @refScale
+                  // 1em corresponds to 16px in most browsers, which is the default font size.
+                  // However, some users might define another default font size for accessibility reasons.
+                  // To convert px to em, do em = px/16. Example: 8px = .5em
+
+@font-size: @refScale;
+
+
+// mixins
+// ===============
+.padding(@padding) {
+  .padding(@padding, @padding, @padding, @padding);
+}
+
+.padding(@topBottom, @rightLeft) {
+  .padding(@topBottom, @rightLeft, @topBottom, @rightLeft);
+}
+
+.padding(@top, @right, @bottom) {
+  .padding(@top, @right, @bottom, @right);
+}
+
+.padding(@top, @right, @bottom, @left) when(@top = @right) and (@right = @bottom) and (@bottom = @left) {
+  padding: @top;
+}
+
+.padding(@top, @right, @bottom, @left) when (@top = @bottom) and (@right = @left) and not (@top = @right) {
+  padding: @top @right;
+}
+
+.padding(@top, @right, @bottom, @left) when not (@top = @bottom), not (@right = @left) {
+  padding: @top @right @bottom @left;
+}
+
+.margin(@margin) {
+  .margin(@margin, @margin, @margin, @margin);
+}
+
+.margin(@topBottom, @rightLeft) {
+  .margin(@topBottom, @rightLeft, @topBottom, @rightLeft);
+}
+
+.margin(@top, @right, @bottom) {
+  .margin(@top, @right, @bottom, @right);
+}
+
+.margin(@top, @right, @bottom, @left) when (@top = @right) and (@right = @bottom) and (@bottom = @left) {
+  margin: @top;
+}
+
+.margin(@top, @right, @bottom, @left) when (@top = @bottom) and (@right = @left) and not (@top = @right) {
+  margin: @top @right;
+}
+
+.margin(@top, @right, @bottom, @left) when not (@top = @bottom), not (@right = @left) {
+  margin: @top @right @bottom @left;
+}
+
+.lineargradient(@g) {
+  background: -webkit-linear-gradient(e(@g));
+  background: -moz-linear-gradient(e(@g));
+  background: -o-linear-gradient(e(@g));
+  background: -ms-linear-gradient(e(@g));
+  background: linear-gradient(e(@g));
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.user-select(@s) {
+  -o-user-select: @s;
+  -moz-user-select: @s;
+  -webkit-user-select: @s;
+  user-select: @s;
+}
+
+
+.btn,
+.btnflat {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: @font-size;
+  color: @colorCaption;
+  .padding(@refScale*.375, @refScale*.875);
+  .margin(@refScale*.0625, @refScale*.375);
+  border: @refScale*.125 solid hsl(0,0%,18%); 
+  border-bottom-width: @refScale*.0625;
+  .border-radius(@refScale*.375);
+  cursor: pointer;
+  background: hsl(0,0%,24%);
+  .box-shadow(~'0 @refScale*.0625 @refScale*.0625 black, 0 @refScale*.25 @refScale*.4375 @refScale*-.1875 hsla(0, 0%, 0%, .7)');
+  outline: none;
+  text-shadow: 0 @refScale*-.0625 @refScale*.0625 hsl(0, 0%, 5%);
+  .user-select(2 3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747',endColorstr='#2b2b2b',GradientType=0);
+}
+.btn {
+  padding-bottom: @refScale*.3125;
+}
+
+.w .btn,
+.w .btnflat {
+  border-color: hsla(0,0%,45%,.9);
+  background-color: hsl(0,0%,90%);
+  color: hsl(60, 100%, 28%);
+  text-shadow: 0 @refScale*-.0625 @refScale*.0625 white;
+}
+.btnflat {
+  color: #7e7a43;
+  border-width: @refScale*.0625;
+}
+
+.btn.frm2 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747',endColorstr='#333',GradientType=0);
+  .box-shadow(~'0 @refScale*.0625 0 #222');
+}
+.w .btn.frm2 {
+  border-color: hsla(0,0%,45%,.9);
+  .box-shadow(~'0 @refScale*.0625 @refScale*.0625 hsla(0,0%,45%,.9)');
+}
+
+.btn.frm3 {
+  .padding(@refScale*.40625, @refScale*.875, @refScale*.28125);
+  margin-bottom: 0;
+  border-bottom: @refScale*.125 solid hsl(0,0%,22%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2b2b2b',endColorstr='#474747',GradientType=0);
+  .box-shadow(none);
+}
+.w .btn.frm3 {
+  border-bottom-color: hsl(0,0%,65%);
+}
+
+.w .btnflat.frm2,
+.w .btnflat.frm3 {
+  border-color: hsla(0,0%,45%,.8);
+  background: hsl(0,0%,86%);
+}
+
+.btnflat.frm2,
+.btnflat.frm3 {
+  margin-bottom: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.btnflat.frm3 {
+  padding: @refScale*.375 @refScale*.875 @refScale*.375;
+  margin-bottom: @refScale*.0625;
+  background: hsl(0,0%,23%);
+} 
+
+
+.btn:before, .btn:after,
+.btnflat:before, .btnflat:after {
+  content: '';
+  position: absolute;
+  .border-radius(@refScale*.3125);
+}
+.btn:before,
+.btnflat:before {
+  top: @refScale*-.3125;
+  left: @refScale*-.3125;
+  right: @refScale*-.3125;
+  bottom: @refScale*-.3125;
+  .border-radius(@refScale*.5);
+  background: hsl(0, 0%, 20%);
+  .lineargradient('top, hsl(0, 0%, 18%), hsl(0, 0%, 32%)');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e2e2e',endColorstr='#525252',GradientType=0);
+  z-index: -1;
+}
+.btnflat:before {
+  top: @refScale*-.25;
+}
+.btnflat.frm1:before {
+  bottom: @refScale*-.3125;
+}
+.btnflat.frm2:before {
+  bottom: @refScale*-.3125;
+}
+
+.w .btn:before,
+.w .btnflat:before {
+  background: white;
+  .lineargradient('top, hsl(0, 0%, 70%), hsl(0, 100%, 100%)');
+}
+
+
+.btn:after,
+.btnflat:after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.btn:after {
+  border: @refScale*.125 solid hsla(0,100%,100%,.03);
+  border-top-color: hsla(0,100%,100%,.2);
+  border-bottom: none;
+  .lineargradient('top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 50%,hsla(0,0%,16%,.7) 100%');
+}
+
+.btn.frm2:after {
+  border: @refScale*.125 solid hsla(0,100%,100%,.05);
+  border-top-color: hsla(0,00%,100%,.12);
+  border-bottom: none;
+  .lineargradient('top, hsla(0,0%,28%,.6) 0%,hsla(0,0%,24%,.2) 25%,hsla(0,0%,20%,.8) 100%');
+}
+
+.btn.frm3:after {
+  border: @refScale*.125 solid hsl(0,0%,22%);
+  border-top-color: hsl(0,0%,23%);
+  border-bottom: none;
+  .lineargradient('top, hsla(0,0%,16%,.7) 0%,hsla(0,0%,24%,.3) 50%,hsla(0,0%,28%,.6) 100%');
+}
+
+.w .btn:after {
+  border-color: hsla(0, 100%, 100%, .2);
+  border-top-color: white;
+  .lineargradient('top,hsla(0,0%,80%,.5) 0%,hsla(0,0%,80%,.5) 47%,hsla(0,0%,60%,.4) 53%,hsla(0,0%,60%,.8) 100%');
+}
+
+.w .btn.frm2:after {
+  border-color: hsla(0, 100%, 100%, .2);
+  border-top-color: hsl(0, 0%, 90%);
+  .lineargradient('top, hsla(0, 0%, 80%, 0.95) 0%,hsla(0, 0%, 60%, 0.5) 40%,hsl(0, 0%, 85%) 100%');
+}
+
+.w .btn.frm3:after {
+  border-color: hsla(0, 100%, 100%, .25);
+  border-top-color: hsl(0, 0%, 85%);
+  .lineargradient('top, hsla(0, 0%, 50%, 0.6), hsla(0, 0%, 80%, 0.25)');
+}
+
+.btnflat:after {
+  border: @refScale*.125 solid hsla(0, 100%, 100%, .08);
+  border-top-color: hsla(0, 100%, 100%, .15);
+  border-bottom: none;
+} 
+.btnflat.frm2:after {
+  border: @refScale*.125 solid hsla(0, 100%, 100%, .055);
+  border-top-color: hsla(0, 100%, 100%, .125);
+  border-bottom: none;
+}
+.btnflat.frm3:after {
+  border: @refScale*.125 solid hsla(0, 100%, 100%, .03);
+  border-top-color: hsla(0, 100%, 100%, .06);
+  border-bottom: none;
+}
+
+.w .btnflat:after {
+  border-color: hsl(0, 100%, 100%);
+}
+.w .btnflat.frm2:after {
+  border-color: hsla(0, 100%, 100%, .7);
+}
+.w .btnflat.frm3:after {
+  border-color: hsla(0, 100%, 100%, .4);
+}

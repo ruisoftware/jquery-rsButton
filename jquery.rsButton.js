@@ -142,6 +142,6 @@
         frameClasses: ['frm1', 'frm2'], // Each class represents a frame in the animation that runs from unpushed to pushed position. Type: array of String.
                                         // The first class is used for the unpushed state, the last for the pushed state. Optional frames in the middle can be used to create a more realistic animation.
         keyboard: ['enter', 'space'],   // Allowed keys. Type: String array.
-        speed: 50                       // Amount of milliseconds each frame is visible. Type: positive integer.
+        speed: 150                      // Amount of milliseconds each frame is visible. Type: positive integer.
     };
 })(jQuery);
