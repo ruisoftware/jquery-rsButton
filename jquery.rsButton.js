@@ -1,4 +1,16 @@
+/**
+* jQuery Button - Push button with animation capabilities.
+* ===============================================================
+*
+* Licensed under The MIT License
+* 
+* @version   1
+* @author    Jose Rui Santos
+*
+* For info, please scroll to the bottom.
+*/
 (function ($, undefined) {
+    'use strict';
     var ButtonClass = function ($elem, opts) {
         var mouseIsDown = false,
             $animObj = null,
@@ -21,8 +33,8 @@
                         prevFrame = 0,
                         doStep = function (now) {
                                     var frame = Math.round(now);
-                                    if (prevFrame == 0 || frame != prevFrame) {
-                                        $elem.removeClass(opts.frameClasses[(prevFrame == 0 ? currFrame : prevFrame) - 1]).addClass(opts.frameClasses[frame - 1]);
+                                    if (prevFrame === 0 || frame !== prevFrame) {
+                                        $elem.removeClass(opts.frameClasses[(prevFrame === 0 ? currFrame : prevFrame) - 1]).addClass(opts.frameClasses[frame - 1]);
                                         prevFrame = currFrame = frame;
                                     }
                                  },
@@ -90,17 +102,17 @@
                     }
                 }
             },
-            gotFocus = function (event) {
+            gotFocus = function () {
                 if (!isDocumentKeyEventsBound) {
                     $(document).bind('keydown.rsButton', onKeydown);
                     isDocumentKeyEventsBound = true;
                 }
             },
-            loseFocus = function (event) {
+            loseFocus = function () {
                 $(document).unbind('keydown.rsButton', onKeydown);
                 isDocumentKeyEventsBound = false;
             },
-            onDestroy = function (event) {
+            onDestroy = function () {
                 $(document).
                     unbind('mouseup.rsButton', onmouseup).
                     unbind('keydown.rsButton', onKeydown);
@@ -125,7 +137,6 @@
         };
 
         if (typeof options === 'string') {
-            var otherArgs = Array.prototype.slice.call(arguments, 1);
             switch (options) {
                 case 'destroy': return destroy.call(this);
                 default: return this;
