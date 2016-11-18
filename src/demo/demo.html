@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <title>jquery-rsButton plug-in</title>
+  <link rel="stylesheet" href="../../dist/rsButton.css" />
+  <link rel="stylesheet" href="./normalize.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../jquery.rsButton.js"></script>
+  <script>
+    $(document).ready(function () {
+    	$("button, input, span").rsButton({ frameClasses: ['frm1', 'frm2', 'frm3'] });
+    });
+  </script>
+  <style>
+  	body {
+  		margin: 1em;
+  		color: white;
+  	}
+  	section {
+  		margin: 1em;
+  	}
+  	section > label {
+	  	width: 3em;
+	  	line-height: 2em;
+    	display: inline-block;
+  	}
+  	h3 {
+  		margin-top: 3em;
+  	}
+  </style>
+</head>
+<body>
+	<h1>jquery-rsButton plugin demo</h1>
+	<section>
+		<label>3D</label>
+		<button class="btn">button</button>
+	    <input class="btn" type="button" value="input type=button" />
+	    <input class="btn" type="submit" value="input type=submit" />
+	    <span class="btn">span</span>
+	</section>
+
+	<section>
+		<label>Flat</label>
+		<button class="btnflat">button</button>
+	    <input class="btnflat" type="button" value="input type=button" />
+	    <input class="btnflat" type="submit" value="input type=submit" />
+	    <span class="btnflat">span</span>
+	</section>
+
+	
+	<h3>You can make them responsive. Please resize your browser window.</h3>
+	<section style="font-size: 2vw">
+		<label>3D</label>
+		<button class="btn">button</button>
+	    <input class="btn" type="button" value="input type=button" />
+	    <input class="btn" type="submit" value="input type=submit" />
+	    <span class="btn">span</span>
+	</section>
+	
+	<section style="font-size: 2vw">
+		<label>Flat</label>
+		<button class="btnflat">button</button>
+	    <input class="btnflat" type="button" value="input type=button" />
+	    <input class="btnflat" type="submit" value="input type=submit" />
+	    <span class="btnflat">span</span>
+    </section>
+<body>
+</html>
+
