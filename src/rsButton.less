@@ -41,6 +41,7 @@ body {
     text-shadow: 0 @refScale*-.0625 @refScale*.0625 @background;
     background: @background;
     color: saturate(@text, 25%);
+    overflow: visible; // in order for IE to display the :before pseudo element that overflows the button
   
     &:before,
     &:after {
@@ -72,11 +73,14 @@ body {
         border-color: fade(@fromGradientOuter, 40%);
         border-top-color: fade(@toGradientOuter, 40%);
     }
+    &.frm4:after {
+        border: none;
+    }
 }
 
 .btn {
     padding-bottom: @refScale*.3125;
-    .box-shadow(0 @refScale*.0625 @refScale*.0625 hsla(0, 0%, 0%, .2), 0 @refScale*.25 @refScale*.4375 @refScale*-.1875 hsla(0, 0%, 0%, .5));
+    box-shadow: 0 @refScale*.0625 @refScale*.0625 hsla(0, 0%, 0%, .2), 0 @refScale*.25 @refScale*.4375 @refScale*-.1875 hsla(0, 0%, 0%, .5);
     &:before {
         top: @refScale*-.3125;
         left: @refScale*-.3125;
@@ -88,25 +92,51 @@ body {
     }
   
     &.frm2 {
-        .box-shadow(0 @refScale*.0625 @refScale*.0625 darken(@borderColor, 1%));
-        background: darken(@background, 3%);
+        box-shadow: 0 @refScale*.0625 @refScale*.0625 darken(@borderColor, 1%);
+        background: darken(@background, 1%);
     }
 
-    &.frm3 {
+    &.frm3,
+    &.frm4 {
         .padding(@refScale*.40625, @refScale*.875, @refScale*.28125);
         margin-bottom: 0;
-        border-bottom: @refScale*.125 solid lighten(@borderColor, 2%);
-        .box-shadow(none);
-        background: darken(@background, 5%);
+        border-color: lighten(@borderColor, 2%);
+        border-bottom: @refScale*.125 solid lighten(@borderColor, 4%);
+        box-shadow: inset 0 .25em .3em darken(@fromGradientOuter, 3%);
+        background: darken(@background, 2%);
         &:after {
             .lineargradient(top, fade(@fromGradientInner, 50%) 0%, fade(@fromGradientInner, 50%) 44%, fade(@toGradientInner, 40%) 50%, fade(@toGradientInner, 80%) 100%);
+        }
+    }
+    &.frm4 {
+        border-color: lighten(@borderColor, 3%);
+        border-bottom-color: lighten(@borderColor, 5%);
+        box-shadow: inset 0 .15em .3em darken(@fromGradientOuter, 3%);
+        background: darken(@background, 2.5%);
+    }
+    
+    input& {
+        box-shadow: 0 0 @refScale*.4375 @refScale*-.1875 hsla(0, 0%, 0%, .5);
+        &.frm2 {
+            box-shadow: 0 0 @refScale*.0625 darken(@borderColor, 1%);
+        }
+        &.frm2 {
+            background: darken(@background, 1.25%);
+        }
+        &.frm3 {
+            box-shadow: none;
+        }
+        &.frm4 {
+            box-shadow: inset 0 0 0.2em darken(@fromGradientOuter, 3%);
+            border-bottom-width: 0.0625em;
+            background: darken(@background, 1.5%);
         }
     }
 }
 
 .btnflat {
     color: @text;
-    .box-shadow(0 4px 1px -0.1875em rgba(0, 0, 0, 0.4));
+    box-shadow: 0 .25em .0625em -0.1875em rgba(0, 0, 0, 0.4);
     &:before {
         top: @refScale*-.25;
         left: @refScale*-.25;
@@ -117,16 +147,21 @@ body {
         border-width: @refScale*.0625;
     }
     &.frm2 {
-        .box-shadow(0 3px 1px -0.1875em rgba(0, 0, 0, 0.4));
+        box-shadow: 0 .1875em .0625em -0.1875em rgba(0, 0, 0, 0.4);
         &:after {
             .lineargradient(top, fade(@background, 8%) 0%, fade(@toGradientInner, 8%) 100%);
         }
     }
-    &.frm3 {
-        .box-shadow(inset 0 3px 6px -5px rgba(0,0,0,.5));
+    &.frm3,
+    &.frm4 {
+        background: darken(@background, .125%);
+        box-shadow: inset 0 .1875em .375em -.3125em rgba(0,0,0,.5);
         &:after {
             .lineargradient(top, fade(@background, 20%) 0%, fade(@toGradientInner, 20%) 100%);
         }
+    }
+    &.frm4 {
+        background: darken(@background, .25%);
     }
 }
 
@@ -211,20 +246,6 @@ body {
     -moz-border-radius: @radius;
     -o-border-radius: @radius;
     border-radius: @radius;
-}
-
-.box-shadow(@shadow) {
-    -webkit-box-shadow: @shadow;
-    -moz-box-shadow: @shadow;
-    -o-box-shadow: @shadow;
-    box-shadow: @shadow;
-}
-
-.box-shadow(@shadow1, @shadow2) {
-    -webkit-box-shadow: @shadow1, @shadow2;
-    -moz-box-shadow: @shadow1, @shadow2;
-    -o-box-shadow: @shadow1, @shadow2;
-    box-shadow: @shadow1, @shadow2;
 }
 
 .user-select(@s) {
