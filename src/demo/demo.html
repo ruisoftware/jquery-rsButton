@@ -1,60 +1,60 @@
 <!doctype html>
 <html>
 <head>
-  <title>jquery-rsButton plug-in</title>
-  <link rel="stylesheet" href="../../dist/rsButton.css" />
-  <link rel="stylesheet" href="./normalize.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="../jquery.rsButton.js"></script>
-  <script>
-    $(document).ready(function () {
-    	$("button, input, span").rsButton({ frameClasses: ['frm1', 'frm2', 'frm3', 'frm4'] });
-    });
-  </script>
-  <style>
-  	body {
-  		margin: 1em;
-  		color: white;
-  	}
-  	section {
-  		margin: 1em;
-  	}
-  	section > label {
-	  	width: 3em;
-	  	line-height: 2em;
-    	display: inline-block;
-  	}
-  	h3 {
-  		margin-top: 3em;
-  	}
-  	button.media {
-  		text-indent: 1.2em;
-  	}
-  	button.media label {
-  		position: absolute;
-  		left: 1em;
-  		border: .6em solid transparent;
-    	border-left-color: #d6c80a;
-  	}
-  </style>
+	<title>jquery-rsButton plug-in</title>
+	<link rel="stylesheet" href="../../dist/rsButton.css" />
+	<link rel="stylesheet" href="./normalize.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="../jquery.rsButton.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("button, input").rsButton({ frameClasses: ['frm1', 'frm2', 'frm3', 'frm4'] });
+		});
+	</script>
+	<style>
+		body {
+			margin: 1em;
+			color: white;
+		}
+		section {
+			margin: 1em;
+		}
+		section > label {
+			width: 3em;
+			line-height: 2em;
+			display: inline-block;
+		}
+		h3 {
+			margin-top: 3em;
+		}
+		button.media {
+			text-indent: 1.2em;
+		}
+		button.media label {
+			position: absolute;
+			left: 1em;
+			border: .6em solid transparent;
+			border-left-color: #d6c80a;
+		}
+	</style>
 </head>
 <body>
 	<h1>jquery-rsButton plugin demo</h1>
-
+	<p>A CSS button that displays several frames when the user clicks on it.</p>
+	<p>Every push button has two states: the up state and the press down state. While some sites only display a unique up state image of a button, others go a bit further and show a different image for the down state, which gives a nice visual feedback to the user.</p>
+	<p>This plugin takes a step even further, by making the transition of button state even more realistic, but showing in rapid succession a series of images, giving an even better feedback to the user.</p>
 	<section>
 		<label>3D</label>
-		<button class="btn">button</button>
-	    <input class="btn" type="button" value="input type=button" />
-	    <input class="btn" type="submit" value="input type=submit" />
-	    <span class="btn">span</span>
+		<button class="btn">&lt;button&gt;</button>
+		<input class="btn" type="button" value="&lt;input type=button&gt;" />
+		<input class="btn" type="submit" value="&lt;input type=submit&gt;" />
 	</section>
 
 	<section>
 		<label>Flat</label>
-		<button class="btnflat">button</button>
-	    <input class="btnflat" type="button" value="input type=button" />
-	    <input class="btnflat" type="submit" value="input type=submit" />
-	    <span class="btnflat">span</span>
+		<button class="btnflat">&lt;button&gt;</button>
+		<input class="btnflat" type="button" value="&lt;input type=button&gt;" />
+		<input class="btnflat" type="submit" value="&lt;input type=submit&gt;" />
 	</section>
 
 	<h3>These buttons are made out of pure CSS, no images whatsoever.</h3>
@@ -66,19 +66,17 @@
 	<p>Please resize your browser window</p>	
 	<section style="font-size: 2vw">
 		<label>3D</label>
-		<button class="btn">button</button>
-	    <input class="btn" type="button" value="input type=button" />
-	    <input class="btn" type="submit" value="input type=submit" />
-	    <span class="btn">span</span>
+		<button class="btn">&lt;button&gt;</button>
+		<input class="btn" type="button" value="&lt;input type=button&gt;" />
+		<input class="btn" type="submit" value="&lt;input type=submit&gt;" />
 	</section>
-	
+
 	<section style="font-size: 2vw">
 		<label>Flat</label>
-		<button class="btnflat">button</button>
-	    <input class="btnflat" type="button" value="input type=button" />
-	    <input class="btnflat" type="submit" value="input type=submit" />
-	    <span class="btnflat">span</span>
-    </section>
+		<button class="btnflat">&lt;button&gt;</button>
+		<input class="btnflat" type="button" value="&lt;input type=button&gt;" />
+		<input class="btnflat" type="submit" value="&lt;input type=submit&gt;" />
+	</section>
 <body>
 </html>
 
