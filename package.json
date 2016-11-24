@@ -13,6 +13,24 @@
     "type": "git",
     "url": "https://github.com/ruisoftware/jquery-rsButton.git"
   },
+  "keywords": [
+    "jquery",
+    "javascript",
+    "plug-in",
+    "plugin",
+    "3D",
+    "real",
+    "realistic",
+    "smooth",
+    "css",
+    "gradient",
+    "custom",
+    "button",
+    "less",
+    "push",
+    "state",
+    "transition"
+  ],
   "bugs": "https://github.com/ruisoftware/jquery-rsButton/issues",
   "licenses": [
     {
