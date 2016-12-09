@@ -5,7 +5,7 @@
 
 // scalar values
 // ===============
-@refScale: 1em;   // Allowed units are: px, pt (for fixed layout) or em, rem, vw, vh, vmin, vmax (for elastic layout).
+@refScale: 3em;   // Allowed units are: px, pt (for fixed layout) or em, rem, vw, vh, vmin, vmax (for elastic layout).
                   // To try other sizes, you only need to change this line. All the rest will resize according to this @refScale
                   // 1em corresponds to 16px in most browsers, which is the default font size.
                   // However, some users might define another default font size for accessibility reasons.
@@ -68,12 +68,12 @@ body {
     &.frm2:after {
         border-color: fade(@fromGradientOuter, 55%);
         border-top-color: fade(@toGradientOuter, 55%);
-        border-width: 0.083em;
+        border-width: @refScale*.083;
     }
     &.frm3:after {
         border-color: fade(@fromGradientOuter, 40%);
         border-top-color: fade(@toGradientOuter, 40%);
-        border-width: 0.03125em;
+        border-width: @refScale*.03125;
     }
     &.frm4:after {
         border: none;
@@ -90,7 +90,6 @@ body {
         bottom: @refScale*-.3125;
     }
     &:after {
-        //.lineargradient(top, fade(@fromGradientInner, 50%) 0%, fade(@fromGradientInner, 50%) 47%, fade(@toGradientInner, 40%) 53%, fade(@toGradientInner, 80%) 100%);
         .lineargradient(top, fade(@fromGradientInner, 50%) 0%, fade(@fromGradientInner, 50%) 45%, fade(@toGradientInner, 40%) 55%, fade(@toGradientInner, 80%) 100%);
     }
   
@@ -105,22 +104,21 @@ body {
         margin-bottom: 0;
         border-color: lighten(@borderColor, 2%);
         border-bottom: @refScale*.125 solid lighten(@borderColor, 4%);
-        box-shadow: inset 0 .25em .3em darken(@fromGradientOuter, 3%);
+        box-shadow: inset 0 @refScale*.25 @refScale*.3 darken(@fromGradientOuter, 3%);
         background: darken(@background, 2%);
         &:after {
-            //.lineargradient(top, fade(@fromGradientInner, 50%) 0%, fade(@fromGradientInner, 50%) 44%, fade(@toGradientInner, 40%) 50%, fade(@toGradientInner, 80%) 100%);
             .lineargradient(top, fade(@fromGradientInner, 50%) 0%, fade(@fromGradientInner, 50%) 41%, fade(@toGradientInner, 40%) 53%, fade(@toGradientInner, 80%) 100%);
         }
     }
     &.frm4 {
         border-color: lighten(@borderColor, 3%);
         border-bottom-color: lighten(@borderColor, 5%);
-        box-shadow: inset 0 .15em .3em darken(@fromGradientOuter, 3%);
+        box-shadow: inset 0 @refScale*.15 @refScale*.3 darken(@fromGradientOuter, 3%);
         background: darken(@background, 2.5%);
     }
     
     input& {
-        box-shadow: 0 0 @refScale*0.125 @borderColor;
+        box-shadow: 0 0 @refScale*.125 @borderColor;
         &.frm2 {
             background: darken(@background, 1.25%);
             box-shadow: 0 0 @refScale*.0625 darken(@borderColor, 1%);
@@ -130,8 +128,8 @@ body {
             border-bottom: none;
         }
         &.frm4 {
-            box-shadow: inset 0 0 0.2em darken(@fromGradientOuter, 3%);
-            border-bottom-width: 0.0625em;
+            box-shadow: inset 0 0 @refScale*.2 darken(@fromGradientOuter, 3%);
+            border-bottom-width: @refScale*.0625;
             background: darken(@background, 1.5%);
         }
     }
@@ -139,7 +137,7 @@ body {
 
 .btnflat {
     color: @text;
-    box-shadow: 0 .25em .0625em -0.1875em rgba(0, 0, 0, 0.4);
+    box-shadow: 0 @refScale*.25 @refScale*.0625 @refScale*-.1875 rgba(0, 0, 0, .4);
     &:before {
         top: @refScale*-.25;
         left: @refScale*-.25;
@@ -150,7 +148,7 @@ body {
         border-width: @refScale*.0625;
     }
     &.frm2 {
-        box-shadow: 0 .1875em .0625em -0.1875em rgba(0, 0, 0, 0.4);
+        box-shadow: 0 @refScale*.1875 @refScale*.0625 @refScale*-.1875 rgba(0, 0, 0, .4);
         &:after {
             .lineargradient(top, fade(@background, 8%) 0%, fade(@toGradientInner, 8%) 100%);
         }
@@ -158,7 +156,7 @@ body {
     &.frm3,
     &.frm4 {
         background: darken(@background, .125%);
-        box-shadow: inset 0 .1875em .375em -.3125em rgba(0,0,0,.5);
+        box-shadow: inset 0 @refScale*.1875 @refScale*.375 @refScale*-.3125 rgba(0,0,0,.5);
         &:after {
             .lineargradient(top, fade(@background, 20%) 0%, fade(@toGradientInner, 20%) 100%);
         }
