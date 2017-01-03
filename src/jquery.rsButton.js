@@ -1,10 +1,6 @@
 /**
 * jQuery Button - Push button with animation capabilities.
 * ===============================================================
-*
-* Licensed under The MIT License
-* 
-* @version   1
 * @author    Jose Rui Santos
 *
 * For info, please scroll to the bottom.
@@ -151,7 +147,7 @@
 
     // public access to the default input parameters
     $.fn.rsButton.defaults = {
-        frameClasses: ['frm1', 'frm2'], // Each class represents a frame in the animation that runs from unpushed to pushed position. Type: array of String.
+        frameClasses: ['frm1', 'frm2', 'frm3', 'frm4'], // Each class represents a frame in the animation that runs from unpushed to pushed position. Type: array of String.
                                         // The first class is used for the unpushed state, the last for the pushed state. Optional frames in the middle can be used to create a more realistic animation.
         keyboard: ['enter', 'space'],   // Allowed keys. Type: String array.
         speed: 60                       // Amount of milliseconds each frame is visible. Type: positive integer.
