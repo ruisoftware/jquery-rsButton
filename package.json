@@ -2,7 +2,7 @@
   "name": "jquery.rsButton",
   "title": "Smooth sprite transition between states",
   "description": "Shows intermediate sprites when running a transition between two states",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ruisoftware/jquery-rsButton",
   "author": {
     "name": "Jose Rui Santos",
