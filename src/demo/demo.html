@@ -9,7 +9,9 @@
 	<script>
 		$(document).ready(function () {
 			$("button, input").rsButton({ frameClasses: ['frm1', 'frm2', 'frm3', 'frm4'] });
+			$("#car").rsButton({ frameClasses: ['car1', 'car2', 'car3', 'car4', 'car5'] });
 		});
+
 	</script>
 	<style>
 		body {
@@ -36,13 +38,133 @@
 			border: .6em solid transparent;
 			border-left-color: #d6c80a;
 		}
+
+		#car { /* car top body */
+			cursor: pointer;
+			font-size: 2vw;
+			display: inline-block;
+			background-color: #0ff;
+			width: 4em;
+			height: 5em;
+			border-radius: 70% 30%;
+			position: relative;
+			left: 5em;
+			-webkit-transform: rotate(15deg);
+			-moz-transform: rotate(15deg);
+			-ms-transform: rotate(15deg);
+			transform: rotate(15deg);
+		}
+		#car:before { /* car bottom body */
+			content: '';
+			display: inline-block;
+			background-color: darkblue;
+			width: 7em;
+			height: 2.7em;
+			border-radius: 72% 25% 20% 16%;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			-moz-transform: translateX(-50%) rotate(-17deg);
+			-webkit-transform: translateX(-50%) rotate(-17deg);
+			-ms-transform: translateX(-50%) rotate(-17deg);
+			transform: translateX(-50%) rotate(-17deg);
+		}
+		#car:after { /* lights */
+			content: '';
+			display: inline-block;
+			background-color: #ff0;
+			width: 0.5em;
+			height: .8em;
+			position: absolute;
+			bottom: 0;
+			left: -1em;
+			border-radius: 50%;
+			box-shadow: -1em 0.5em 1em yellow, -1.7em 1em 1.3em yellow, -2.7em 1.5em 1.8em yellow;
+			-webkit-transform: rotate(20deg);
+			-moz-transform: rotate(20deg);
+			-ms-transform: rotate(20deg);
+			transform: rotate(20deg);
+		}
+		#car span { /* wheels */ 
+			display: inline-block;
+			width: 1.2em;
+			height: 1.2em;
+			border-radius: 50%;
+			background-color: #ddd;
+			border: .4em #222 solid;
+			position: absolute;
+			left: 0;
+			bottom: -1.2em;
+			box-shadow: 0 0 0 0.2em #454545;
+			-webkit-transform: rotate(-15deg);
+			-moz-transform: rotate(-15deg);
+			-ms-transform: rotate(-15deg);
+			transform: rotate(-15deg);
+		}
+		#car span + span { /* rear wheel */
+			left: auto;
+			right: -1em;
+			bottom: -.2em;
+		}
+		#car.car2 {
+			top: .1em;
+		}
+		#car.car2 span {
+			bottom: -1.1em;
+			left: -0.05em;
+		}
+		#car.car2 span + span {
+			bottom: -.1em;
+			left: auto;
+			right: -0.95em;
+		}
+		#car.car3 {
+			top: .2em;
+		}
+		#car.car3 span {
+			bottom: -1em;
+			left: -0.1em;
+		}
+		#car.car3 span + span {
+			bottom: 0;
+			left: auto;
+			right: -0.9em;
+		}
+		#car.car4 {
+			top: .3em;
+		}
+		#car.car4 span {
+			bottom: -0.9em;
+			left: -0.15em;
+			height: 1.1em;
+			box-shadow: 0 0.1em 0 0.2em #454545;
+		}
+		#car.car4 span + span {
+			bottom: 0.1em;
+			left: auto;
+			right: -0.85em;
+		}
+		#car.car5 {
+			top: .4em;
+		}
+		#car.car5 span {
+			bottom: -0.8em;
+			left: -0.15em;
+			height: 1em;
+			box-shadow: 0 0.2em 0 0.2em #454545;
+		}
+		#car.car5 span + span {
+			bottom: 0.2em;
+			left: auto;
+			right: -0.85em;
+		}
 	</style>
 </head>
 <body>
-	<h1>jquery-rsButton plugin demo</h1>
+	<h1>jquery-rsButton plug-in demo</h1>
 	<p>A CSS button that displays several frames when the user clicks on it.</p>
 	<p>Every push button has two states: the unpressed and the pressed state. While some sites only display a unique unpressed state image of a button, others go a bit further and show a different image for the pressed state, giving a nice visual feedback when a button is pushed down.</p>
-	<p>This plugin makes this visual feedback even more realistic, by quickly showing a series of frames between these two states.</p>
+	<p>This plug-in makes this visual feedback even more realistic, by quickly showing a series of frames between these two states.</p>
 	<section>
 		<label>3D</label>
 		<button class="btn">&lt;button&gt;</button>
@@ -77,6 +199,12 @@
 		<input class="btnflat" type="button" value="&lt;input type=button&gt;" />
 		<input class="btnflat" type="submit" value="&lt;input type=submit&gt;" />
 	</section>
+
+	This plug-in works with any HTML element. Please click on the car.
+	<div id="car">
+		<span></span>
+		<span></span>
+	</div>
 <body>
 </html>
 
