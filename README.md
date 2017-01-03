@@ -12,7 +12,7 @@ Here is an example:
         frameClasses: ['frm1', 'frm2', 'frm3', 'frm4']
     });
 ```
-When a button is pressed, the frm1, frm2, frm3 and frm4 are displayed one after another for 60 milliseconds (you can change the frame delay).
+When a button is pressed, the frm1, frm2, frm3 and frm4 are displayed one after another for 60 milliseconds (you can change the frame delay).  
 ![frames](https://cloud.githubusercontent.com/assets/428736/21605695/d6674192-d1bb-11e6-800d-227bbf6527b4.png)  
 Notice the subtle differences between these four frames and the changes made to the markup during this process.
 
@@ -31,11 +31,11 @@ Yes, if you want a 3D layout to your buttons.
 If you prefer a flat layout, then use the class `btnflat` instead.  
 Notice that you are free to use whatever class you want, just make sure it is also defined in the `src/rsButton.less`.
 
-###Why my `<input class"btn">` element looks flat and not 3D alike?
+###Why my `<input class="btn">` element looks flat and not 3D alike?
 In the `src/rsButton.less` you can see that the 3D look is achived via the `:before` and `:after` pseudo-classes.  
 These pseudo-classes cannot be applied to `input` elements, since they are not block elements, they are inline, and therefore `input` elements can only have a flat layout.
 
-##Is it limited to 4 frames?
+###Is it limited to 4 frames?
 No, you can use as many frames you wish. If you only use 1 or 2 frames, then there is no point using this plug-in, since that can be easly done with CSS alone.  
 You need to make sure the frames you specify in `frameClasses` property are defined in the LESS file.
 
@@ -44,7 +44,7 @@ Run
 ```bash
 grunt less
 ```
-It creates a new `dest/rsButton.css` file.
+It creates a new `dist/rsButton.css` file.
 
 ###This plug-in can only be used for push buttons?
 No. It can be used for any control that switches from state A to state B when pressed down and from state B to A when released.  
