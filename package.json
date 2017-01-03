@@ -1,5 +1,5 @@
 {
-  "name": "jquery.rsButton",
+  "name": "jquery.rsbutton",
   "title": "Smooth sprite transition between states",
   "description": "Shows intermediate sprites when running a transition between two states",
   "version": "1.0.1",
