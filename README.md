@@ -102,7 +102,7 @@ Due to the above problems, a decision was made to implement this functionality i
 
 You can install from [npm](https://www.npmjs.com/):
 ```bash
-npm install jquery-rsButton --save
+npm install jquery.rsbutton --save
 ```
 or directly from git:
 ```javascript
