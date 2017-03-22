@@ -19,44 +19,44 @@ Notice the subtle differences between these four frames and the changes made to 
 When a button is released, the frames are displayed in oposite order: frm4, frm3, frm2 and frm1.  
 [Live demo here](http://codepen.io/ruisoftware/pen/rjNMZJ).
 
-#Faq
-###I dislike the colors and style. Is it possible to change?
+# Faq
+### I dislike the colors and style. Is it possible to change?
 Sure it is possible to change.  
 For reasons related with performance and responsive design, each frame is made out of pure CSS with relative `em` units. They are not images at all. These relative units should always be used, even if you wish to use a fixed size layout.  
 For your convenience, there is a LESS file at `src/rsButton.less` where you can change the frames to your preference. If you are interested in changing only the color palette, you can change the `@background` variable in the LESS file.  
 However, nothing stops you from using images for each frame, although that might cause performance and responsive design issues later on.
 
-###Do I need to specify that `btn` class?
+### Do I need to specify that `btn` class?
 Yes, if you want a 3D layout to your buttons.  
 If you prefer a flat layout, then use the class `btnflat` instead.  
 Notice that you are free to use whatever class you want, just make sure it is also defined in the `src/rsButton.less`.
 
-###Why my `<input class="btn">` element looks flat and not 3D alike?
+### Why my `<input class="btn">` element looks flat and not 3D alike?
 In the `src/rsButton.less` you can see that the 3D look is achived via the `:before` and `:after` pseudo-classes.  
 These pseudo-classes cannot be applied to `input` elements, since they are not block elements, they are inline, and therefore `input` elements can only have a flat layout.
 
-###Is it limited to 4 frames?
+### Is it limited to 4 frames?
 No, you can use as many frames you wish. If you only use 1 or 2 frames, then there is no point using this plug-in, since that can be easly done with CSS alone.  
 You need to make sure the frames you specify in `frameClasses` property are defined in the LESS file.
 
-###How can I compile LESS into CSS?
+### How can I compile LESS into CSS?
 Run 
 ```bash
 grunt less
 ```
 It creates a new `dist/rsButton.css` file.
 
-###This plug-in can only be used for push buttons?
+### This plug-in can only be used for push buttons?
 No. It can be used for any control that switches from state A to state B when pressed down and from state B to A when released.  
 This means that this plug-in works for any markup, not only for `<button>`.  
 Since the most common control with this behaviour is a push button, hence the plug-in name.
 
-###Cannot this be done with CSS alone?
+### Cannot this be done with CSS alone?
 It depends...  
 Yes, if you want to simply smooth (interpolate) frames between a start and an end frame. In this case, you should not use this plug-in and must resort to CSS transitions.  
 No, if you want to design specific frames that are distinct from each other and thus not possible to replicate via CSS transitions.
 
-###Why cannot use CSS animations to specify distinct frames?
+### Why cannot use CSS animations to specify distinct frames?
 You *almost* can with CSS3 animations.  
 By default, CSS3 animations perform interpolations between the animation steps. Since we don't want any frame interpolation (because we define how each frame exactly looks), we need to specify either `step-start` or `step-end` as your [timing function](https://developer.mozilla.org/ru/docs/Web/CSS/single-transition-timing-function#step-start).  
 You also need two animations:
@@ -92,13 +92,13 @@ Basically, there are three problems with this approach:
 
 Due to the above problems, a decision was made to implement this functionality in JavaScript.
 
-#Key Features
+# Key Features
  - Works with any HTML element;
  - Desktop and mobile devices;
  - Optionally uses the keyboard (space or Enter);
  - Small footprint.
 
-#Installation
+# Installation
 
 You can install from [npm](https://www.npmjs.com/):
 ```bash
@@ -112,7 +112,7 @@ or you can download the Zip archive from github, clone or fork this repository a
 
 You also need to download jQuery. In the example below, jQuery is downloaded from Google cdn.
 
-#Usage
+# Usage
 ```javascript
 <!doctype html>
 <html>
